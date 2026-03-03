@@ -1,0 +1,251 @@
+{
+  "users": [
+    {
+      "id": "99f4",
+      "name": "User 1",
+      "email": "user1@test.com",
+      "password": "pass1"
+    },
+    {
+      "id": "493b",
+      "name": "User 2",
+      "email": "user2@test.com",
+      "password": "pass2"
+    },
+    {
+      "id": "a7c1",
+      "name": "User 3",
+      "email": "user3@test.com",
+      "password": "pass3"
+    },
+    {
+      "id": "4c98",
+      "name": "User 4",
+      "email": "user4@test.com",
+      "password": "pass4"
+    },
+    {
+      "id": "bbb8",
+      "name": "User 5",
+      "email": "user5@test.com",
+      "password": "pass5"
+    },
+    {
+      "id": "53a6",
+      "name": "manvendra",
+      "email": "manvendrabhardwaj230@gmail.com",
+      "password": "123",
+      "userId": "222user"
+    },
+    {
+      "id": "0ec9",
+      "name": "manvendra",
+      "email": "manvendrabhardwaj230@gmail.com",
+      "password": "123",
+      "userId": "222user"
+    },
+    {
+      "id": "6188",
+      "name": "manvendra",
+      "email": "manvendrabhardwaj230@gmail.com",
+      "password": "123",
+      "userId": "222user"
+    },
+    {
+      "id": "1ce1",
+      "name": "manvendra",
+      "email": "manvendrabhardwaj230@gmail.com",
+      "password": "123",
+      "userId": "222user"
+    }
+  ],
+  "orders": [
+    {
+      "id": "ord001",
+      "orderId": 5001,
+      "userId": "99f4",
+      "date": "2026-03-01",
+      "total": 4700,
+      "items": [
+        {
+          "productId": 101,
+          "name": "Nike Shoes",
+          "price": 3500,
+          "quantity": 1
+        },
+        {
+          "productId": 102,
+          "name": "Adidas T-shirt",
+          "price": 1200,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "ord002",
+      "orderId": 5002,
+      "userId": "99f4",
+      "date": "2026-03-05",
+      "total": 3000,
+      "items": [
+        {
+          "productId": 103,
+          "name": "Puma Sneakers",
+          "price": 3000,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "ord003",
+      "orderId": 5003,
+      "userId": "493b",
+      "date": "2026-03-02",
+      "total": 5200,
+      "items": [
+        {
+          "productId": 104,
+          "name": "Reebok Shorts",
+          "price": 2200,
+          "quantity": 1
+        },
+        {
+          "productId": 105,
+          "name": "Under Armour Jacket",
+          "price": 3000,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "ord004",
+      "orderId": 5004,
+      "userId": "493b",
+      "date": "2026-03-06",
+      "total": 2100,
+      "items": [
+        {
+          "productId": 106,
+          "name": "Nike Cap",
+          "price": 2100,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "ord005",
+      "orderId": 5005,
+      "userId": "a7c1",
+      "date": "2026-03-03",
+      "total": 6100,
+      "items": [
+        {
+          "productId": 101,
+          "name": "Nike Shoes",
+          "price": 3500,
+          "quantity": 1
+        },
+        {
+          "productId": 104,
+          "name": "Reebok Shorts",
+          "price": 2200,
+          "quantity": 1
+        },
+        {
+          "productId": 106,
+          "name": "Nike Cap",
+          "price": 2100,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "ord006",
+      "orderId": 5006,
+      "userId": "4c98",
+      "date": "2026-03-04",
+      "total": 2500,
+      "items": [
+        {
+          "productId": 102,
+          "name": "Adidas T-shirt",
+          "price": 1200,
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": "ord007",
+      "orderId": 5007,
+      "userId": "bbb8",
+      "date": "2026-03-07",
+      "total": 4000,
+      "items": [
+        {
+          "productId": 105,
+          "name": "Under Armour Jacket",
+          "price": 4000,
+          "quantity": 1
+        }
+      ]
+    }
+  ],
+  "admins": [
+    {
+      "id": "1",
+      "name": "Admin One",
+      "email": "admin@test.com",
+      "password": "admin123"
+    }
+  ],
+  "products": [
+    {
+      "productId": "101",
+      "name": "Nike Shoes",
+      "price": 3500,
+      "description": "Comfortable running shoes for everyday use.",
+      "stock": 50,
+      "id": "974d"
+    },
+    {
+      "productId": "102",
+      "name": "Adidas T-shirt",
+      "price": 1200,
+      "description": "Breathable cotton T-shirt with logo print.",
+      "stock": 80,
+      "id": "5938"
+    },
+    {
+      "productId": "103",
+      "name": "Puma Sneakers",
+      "price": 3000,
+      "description": "Stylish sneakers for casual wear.",
+      "stock": 65,
+      "id": "4faf"
+    },
+    {
+      "productId": "104",
+      "name": "Reebok Shorts",
+      "price": 2200,
+      "description": "Lightweight shorts perfect for gym and running.",
+      "stock": 40,
+      "id": "7eb3"
+    },
+    {
+      "productId": "105",
+      "name": "Under Armour Jacket",
+      "price": 4000,
+      "description": "Water-resistant jacket for outdoor sports.",
+      "stock": 30,
+      "id": "7db2"
+    },
+    {
+      "productId": "106",
+      "name": "Nike Cap",
+      "price": 2100,
+      "description": "Adjustable cap with iconic Nike logo.",
+      "stock": 70,
+      "id": "607c"
+    }
+  ]
+}
