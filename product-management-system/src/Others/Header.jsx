@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 const Header = ({data,data1}) => {
-    console.log(data)
  function LogOut(){
         data1('')
         navigate("/")

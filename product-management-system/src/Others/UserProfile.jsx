@@ -5,16 +5,11 @@ import { AuthContext } from '../AuthProvider/AuthProvider'
 import ProductCard from './ProductCards'
 const UserProfile = () => {
     const { id } = useParams()
-    console.log(id)
     const authData = useContext(AuthContext)
-    console.log(authData)
-
     const Data = authData.userdata;
     const DataUserLoggedIn = Data.find((item)=> item.id == id)
     const UserOrderData = authData.orderdata
-    console.log(UserOrderData)
     const userorderdata = UserOrderData.filter((item)=> item.userId == id)
-    console.log(userorderdata)
     return (
         <div>
             <h1>Name:{DataUserLoggedIn.name}</h1>
@@ -25,7 +20,7 @@ const UserProfile = () => {
             {
                 userorderdata && userorderdata.map((item) => {
                     return (
-                        <div>
+                        <div key={item.id}>
                             <h1>{item.orderId}</h1>
                             <h1>{item.userId}</h1>
                             <h1>{item.date}</h1>

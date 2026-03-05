@@ -9,28 +9,24 @@ const AuthProvider = ({children}) => {
         const URL = "http://localhost:3000/users";
         let response = await fetch(URL);
         response = await response.json();
-        console.log(response);
         setuserdata(response)
     }
     async function OrderData(){
         const URL = "http://localhost:3000/orders";
         let response = await fetch(URL);
         response = await response.json()
-        console.log(response)
         setorderdata(response)
     }
     async function AdminData(){
         const URL = "http://localhost:3000/admins";
         let response = await fetch(URL)
         response = await response.json()
-        console.log(response)
         setadmindata(response)
     }
     async function ProductData(){
         const URL = "http://localhost:3000/products"
         let response = await fetch(URL)
         response = await response.json()
-        console.log(response)
         setproductdata(response)
     }
     useEffect(()=>{

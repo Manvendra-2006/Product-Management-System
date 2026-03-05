@@ -3,16 +3,13 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 import { useParams } from 'react-router';
 const OrderPlaced = () => {    
 const today = new Date().toISOString().split("T")[0];
-console.log(today);
     const authData = useContext(AuthContext)
-    console.log(authData)
     const ProductData = authData.productdata
-    console.log(ProductData)
     const OrderData = authData.orderdata
     const UserData = authData.userdata
     const { id, Name } = useParams()
-    console.log(id, Name)
     const Data = ProductData.find((item) => item.productId == id)
+    const ID = Data.id
     const Price = Data.price  // yahi mera total hain
     const Stock = Data.stock
     const ProductId = Data.productId
@@ -30,14 +27,7 @@ console.log(today);
         if (submitting == true) {
             fetchData();
         }
-        async function fetchData() {
-            // const URL = "http://localhost:3000/orders"
-            // let response = await fetch(URL, {
-            //     method: "POST",
-            //     body: JSON.stringify({ orderId, userId, date, total, items })
-            // })
-            // response = await response.json()
-            // console.log(response)
+        async function fetchData() {          
             const check = OrderData.find((item)=>item.userId === userId && item.orderId === orderId && item.date===date)
             const UserValid = UserData.find((item)=> item.id == userId)
             if(UserValid){            
@@ -52,7 +42,6 @@ console.log(today);
                 })
             })
             response = await response.json()
-            console.log(response)
              if(response){
                 alert("Order is placed")
             }
@@ -73,7 +62,6 @@ console.log(today);
             alert("User is not valid")
         }
     }
-
     }, [submitting]) // Jab bhi dependecy ki value change hogi useEffect chlega
     function orderplaced(event) {
         event.preventDefault()
@@ -83,6 +71,34 @@ console.log(today);
     function CalculateTotal(event){
         event.preventDefault()
         settotal(Quantity*Price)
+    }
+    async function QuantityDecider(event){
+        if(Stock){
+        const qty = Number(event)
+        if(qty<=Stock){
+            setquantity(event)
+            const TotalStock = Stock-qty;
+            const URL = `http://localhost:3000/products/${ID}`
+            let response = await fetch(URL,{
+                method:"PUT",
+                 headers:{
+                "Content-Type":"application/json"
+            },
+                body:JSON.stringify({
+                    ...Data,
+                    stock : TotalStock
+                })
+            })
+            response = await response.json()
+        }
+
+    
+        else{
+            alert("Stock is not available")
+        }}
+        else{
+            alert("Data not come")            
+        }
     }
     return (
         <div>
@@ -97,12 +113,9 @@ console.log(today);
                 <br />
                 <br />
                 <label htmlFor="">Date</label>
-                <input value={date} type='text' />
+                <input value={date} onChange={(event)=>setdate(event.target.value)} type='text' />
                 <br />
                 <br />
-                {/* <label htmlFor="">Total</label>
-                <input type="number" placeholder='Total Price' onChange={(event) => settotal(event.target.value)} value={price} />
-                <br /> */}
                 <br />
                 <label htmlFor="">Items</label>
                 <ul>
@@ -120,7 +133,7 @@ console.log(today);
                     </li>
                     <li>
                         <label htmlFor="">Quantity</label>
-                        <input type="text" placeholder='Enter Quantity'  onChange={(event) => setquantity(event.target.value)} value={Quantity} />
+                        <input type="text" placeholder='Enter Quantity'  onChange={(event)=>QuantityDecider(event.target.value)} value={Quantity} />
                     </li>
                 </ul>
                 <button onClick={(event)=>CalculateTotal(event)}>Calculate Total</button>

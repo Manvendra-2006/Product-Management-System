@@ -45,8 +45,6 @@ const Login = ({loginhandle}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Simple console login (replace with API call)
-    console.log("Email:", email);
-    console.log("Password:", password);
     loginhandle(email,password)
   };
 

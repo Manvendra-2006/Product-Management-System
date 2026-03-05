@@ -188,6 +188,105 @@
           "quantity": 1
         }
       ]
+    },
+    {
+      "id": "d5c7",
+      "orderId": "ORD2026-03-05",
+      "userId": "99f4",
+      "date": "2026-03-05",
+      "total": 1025900,
+      "items": [
+        {
+          "productId": "101",
+          "name": "NikeShoes",
+          "price": 3500,
+          "Quantity": "1"
+        },
+        {
+          "productId": "101",
+          "name": "NikeShoes",
+          "price": 3500,
+          "Quantity": "23"
+        },
+        {
+          "productId": "101",
+          "name": "NikeShoes",
+          "price": 3500,
+          "Quantity": "45"
+        },
+        {
+          "productId": "101",
+          "name": "NikeShoes",
+          "price": 3500,
+          "Quantity": "45"
+        },
+        {
+          "productId": "101",
+          "name": "NikeShoes",
+          "price": 3500,
+          "Quantity": "45"
+        },
+        {
+          "productId": "101",
+          "name": "NikeShoes",
+          "price": 3500,
+          "Quantity": "45"
+        },
+        {
+          "productId": "101",
+          "name": "NikeShoes",
+          "price": 3500,
+          "Quantity": "12"
+        },
+        {
+          "productId": "101",
+          "name": "NikeShoes",
+          "price": 3500,
+          "Quantity": "12"
+        },
+        {
+          "productId": "101",
+          "name": "NikeShoes",
+          "price": 3500,
+          "Quantity": "12"
+        },
+        {
+          "productId": "101",
+          "name": "NikeShoes",
+          "price": 3500,
+          "Quantity": "12"
+        },
+        {
+          "productId": "101",
+          "name": "NikeShoes",
+          "price": 3500,
+          "Quantity": "12"
+        },
+        {
+          "productId": "101",
+          "name": "NikeShoes",
+          "price": 3500,
+          "Quantity": "12"
+        },
+        {
+          "productId": "102",
+          "name": "AdidasT-shirt",
+          "price": 1200,
+          "Quantity": "12"
+        },
+        {
+          "productId": "101",
+          "name": "NikeShoes",
+          "price": 3500,
+          "Quantity": "12"
+        },
+        {
+          "productId": "101",
+          "name": "NikeShoes",
+          "price": 3500,
+          "Quantity": "1"
+        }
+      ]
     }
   ],
   "admins": [
@@ -204,7 +303,7 @@
       "name": "Nike Shoes",
       "price": 3500,
       "description": "Comfortable running shoes for everyday use.",
-      "stock": 50,
+      "stock": 12,
       "id": "974d"
     },
     {
@@ -212,7 +311,7 @@
       "name": "Adidas T-shirt",
       "price": 1200,
       "description": "Breathable cotton T-shirt with logo print.",
-      "stock": 80,
+      "stock": 68,
       "id": "5938"
     },
     {
