@@ -287,6 +287,21 @@
           "Quantity": "1"
         }
       ]
+    },
+    {
+      "id": "40cf",
+      "orderId": "ORD2026-03-06",
+      "userId": "99f4",
+      "date": "2026-03-06",
+      "total": 1200,
+      "items": [
+        {
+          "productId": "102",
+          "name": "AdidasT-shirt",
+          "price": 1200,
+          "Quantity": "1"
+        }
+      ]
     }
   ],
   "admins": [
@@ -299,19 +314,11 @@
   ],
   "products": [
     {
-      "productId": "101",
-      "name": "Nike Shoes",
-      "price": 3500,
-      "description": "Comfortable running shoes for everyday use.",
-      "stock": 12,
-      "id": "974d"
-    },
-    {
       "productId": "102",
       "name": "Adidas T-shirt",
-      "price": 1200,
+      "stock": "6999",
       "description": "Breathable cotton T-shirt with logo print.",
-      "stock": 68,
+      "price": 1200,
       "id": "5938"
     },
     {

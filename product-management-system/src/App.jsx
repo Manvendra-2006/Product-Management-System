@@ -9,6 +9,8 @@ import AdminDashBoard from './DashBoard/AdminDashBoard'
 import UserProfile from './Others/UserProfile'
 import OrderPlaced from './Others/OrderPlaced'
 import SignUp from './Auth/SignUp'
+import EditProduct from './Others/EditProduct'
+import AddProduct from './Others/AddProduct'
 const App = () => {
   const authData = useContext(AuthContext)
   const DataUser = authData.userdata;
@@ -16,6 +18,7 @@ const App = () => {
   const [user,setuser] = useState('');
   const [datausername,setdatausername] = useState('')
   var DataUserName;
+  var DataAdminName;
   function loginhandle(email,password){
     if(DataUser.find((item)=> item.email == email) && DataUser.find((item)=>item.password == password)){    
       setuser('user')
@@ -25,6 +28,8 @@ const App = () => {
     }
     else if(DataAdmin.find((item)=>item.email == email) && DataAdmin.find((item)=>item.password == password)){
       setuser('admin')
+      DataAdminName = DataAdmin.find((item)=> item.email == email)
+      setdatausername(DataAdminName)
     }    
     else{
       alert("User is not valid")
@@ -36,10 +41,11 @@ const App = () => {
       <Routes>
         <Route path='/signup' element={<SignUp setuser={setuser}/>}/>
         <Route path='/' element={!user ? <Login loginhandle={loginhandle}/> : user =="admin" ?<Navigate to="/AdminDashBoard"/> : <Navigate to={"/UserDashBoard/"+datausername.name.replace(" ","")}/>}/>
-        <Route path="/AdminDashBoard" element={user =="admin" ? <AdminDashBoard/> : <Navigate to="/"/>}/>
+        <Route path="/AdminDashBoard" element={user =="admin" ? <AdminDashBoard data={datausername}/> : <Navigate to="/"/>}/>
         <Route path="/UserDashBoard/:name" element={user == "user" ? <UserDashBoad  data={datausername}  setuser={setuser} /> : <Navigate to="/"/>}/>
         <Route path='/UserDashBoard/UserProfile/:id' element={<UserProfile/>}/>
         <Route path="/UserDashBoard/OrderPlaced/:id/:Name" element={<OrderPlaced/>}/>    
+        <Route path="/AdminDashBoard/ProductList/EditProduct/:id" element={<EditProduct/>}/>
       </Routes>
       </BrowserRouter>
     </div>
