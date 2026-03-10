@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const AddProduct = () => {
      const [productId,setproductId] = useState('')
@@ -6,6 +6,7 @@ const AddProduct = () => {
         const [stock,setstock] = useState('')
         const [description,setdescription] = useState('')
         const [price,setprice] = useState('')
+        
     async function Add(event){
         event.preventDefault()
         const URL = "http://localhost:3000/products"
@@ -42,7 +43,7 @@ const AddProduct = () => {
             <input type="number" placeholder='Enter Price' onChange={(event)=>setprice(event.target.value)} value={price} />
             <br />
             <br />
-            <button type='submit'>Edit</button>
+            <button type='submit'>Add</button>
         </form>
     </div>
   )

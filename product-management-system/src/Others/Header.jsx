@@ -15,9 +15,11 @@ const Header = ({data,data1}) => {
             </div>
             <div>
                 {
-                    data.name == "Admin One" ?<Link to="/AddProduct">Add Product</Link>:<Link to={"/UserDashBoard/UserProfile/"+ data.id}>User Profile</Link>
+                    data.name == "Admin One" ?<Link to="/AdminDashBoard/AddProduct">Add Product</Link>:<Link to={"/UserDashBoard/UserProfile/"+ data.id}>User Profile</Link>
                 }
-                
+                {
+                    data.name == "Admin One" ? <Link to="/AdminDashBoard/UserList">UserLIst</Link>:<Link to={"/UserDashBoard/UserProfile/"+data.id}>User Profile</Link>
+                }
             </div>
             <button onClick={LogOut}>Log Out</button>
         </div>

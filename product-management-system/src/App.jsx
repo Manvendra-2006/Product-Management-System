@@ -11,6 +11,10 @@ import OrderPlaced from './Others/OrderPlaced'
 import SignUp from './Auth/SignUp'
 import EditProduct from './Others/EditProduct'
 import AddProduct from './Others/AddProduct'
+import UserList from './Others/UserList'
+import UserInfo from './Others/UserInfo'
+import UserDetail from './Others/userDetail'
+import UserOrder from './Others/userOrder'
 const App = () => {
   const authData = useContext(AuthContext)
   const DataUser = authData.userdata;
@@ -46,6 +50,12 @@ const App = () => {
         <Route path='/UserDashBoard/UserProfile/:id' element={<UserProfile/>}/>
         <Route path="/UserDashBoard/OrderPlaced/:id/:Name" element={<OrderPlaced/>}/>    
         <Route path="/AdminDashBoard/ProductList/EditProduct/:id" element={<EditProduct/>}/>
+        <Route path="/AdminDashBoard/AddProduct" element={<AddProduct/>}/>
+        <Route path="/AdminDashBoard/UserList" element={<UserList/>}/>
+        <Route path='/AdminDashBoard/UserList/UserInfo/:id' element={<UserInfo/>}>
+        <Route path=":name" element={<UserDetail/>}/>
+        <Route index element={<UserOrder/>}/>
+        </Route>
       </Routes>
       </BrowserRouter>
     </div>
