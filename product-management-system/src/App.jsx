@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from 'react'
 import UserDashBoad from './DashBoard/UserDashBoad'
 import Login from './Auth/Login'
 import { AuthContext } from './AuthProvider/AuthProvider'
-
 //import AuthProvider, { AuthContext } from './AuthProvider/AuthProvider'
 import { BrowserRouter,Route,Routes ,Navigate} from 'react-router-dom'
 import AdminDashBoard from './DashBoard/AdminDashBoard'
@@ -23,17 +22,28 @@ const App = () => {
   const [datausername,setdatausername] = useState('')
   var DataUserName;
   var DataAdminName;
+  useEffect(()=>{
+    if(authData){
+      const loggedInUser = localStorage.getItem('loggedInUser')
+      if(loggedInUser){
+        const userData = JSON.parse(loggedInUser)
+        setuser(userData.role)
+        setdatausername(userData.data)
+      }
+    }
+  },[authData])
   function loginhandle(email,password){
     if(DataUser.find((item)=> item.email == email) && DataUser.find((item)=>item.password == password)){    
       setuser('user')
       DataUserName = DataUser.find((item)=>item.email == email)
       setdatausername(DataUserName)
-      
+      localStorage.setItem('loggedInUser',JSON.stringify({role :'user',data:DataUserName}))
     }
     else if(DataAdmin.find((item)=>item.email == email) && DataAdmin.find((item)=>item.password == password)){
       setuser('admin')
       DataAdminName = DataAdmin.find((item)=> item.email == email)
       setdatausername(DataAdminName)
+        localStorage.setItem('loggedInUser',JSON.stringify({role :'admin',data:DataAdminName}))
     }    
     else{
       alert("User is not valid")
@@ -54,7 +64,7 @@ const App = () => {
         <Route path="/AdminDashBoard/UserList" element={<UserList/>}/>
         <Route path='/AdminDashBoard/UserList/UserInfo/:id' element={<UserInfo/>}>
         <Route path=":name" element={<UserDetail/>}/>
-        <Route index element={<UserOrder/>}/>
+        <Route path="" element={<UserOrder/>}/>
         </Route>
       </Routes>
       </BrowserRouter>

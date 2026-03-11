@@ -100,48 +100,133 @@ const today = new Date().toISOString().split("T")[0];
             alert("Data not come")            
         }
     }
-    return (
-        <div>
-            <h1>Order Placed</h1>
-            <form action="" onSubmit={(event) => orderplaced(event)}>
-                <label htmlFor="">OrderId</label>
-                <input type="text" placeholder='Enter OrderId' onChange={(event) => setorderId(event.target.value)} value={orderId} />
-                <br />
-                <br />
-                <label htmlFor="">UserId</label>
-                <input type="text" placeholder='Enter UserId' onChange={(event) => setuserId(event.target.value)} value={userId} />
-                <br />
-                <br />
-                <label htmlFor="">Date</label>
-                <input value={date} onChange={(event)=>setdate(event.target.value)} type='text' />
-                <br />
-                <br />
-                <br />
-                <label htmlFor="">Items</label>
-                <ul>
-                    <li>
-                        <label htmlFor="">ProductId</label>
-                        <input type="text" placeholder='Enter ProductId' onChange={(event) => setproductId(event.target.value)} value={productId} />
-                    </li>
-                    <li>
-                        <label htmlFor="">Name</label>
-                        <input type="text" placeholder='Enter Name1' onChange={(event) => setname(event.target.value)} value={name} />
-                    </li>
-                    <li>
-                        <label htmlFor="">Price</label>
-                        <input type="text" placeholder='Enter pricce' onChange={(event) => setprice(event.target.value)} value={price} />
-                    </li>
-                    <li>
-                        <label htmlFor="">Quantity</label>
-                        <input type="text" placeholder='Enter Quantity'  onChange={(event)=>QuantityDecider(event.target.value)} value={Quantity} />
-                    </li>
-                </ul>
-                <button onClick={(event)=>CalculateTotal(event)}>Calculate Total</button>
-                <h1>{total}</h1>
-                <button>Submit</button>
-            </form>
-        </div>
-    )
+    const inputStyle = {
+  width:"100%",
+  padding:"8px",
+  marginBottom:"10px",
+  border:"1px solid #ccc",
+  borderRadius:"5px"
 }
 
+const btnStyle = {
+  width:"100%",
+  padding:"10px",
+  background:"#2563eb",
+  color:"white",
+  border:"none",
+  borderRadius:"5px",
+  marginTop:"10px",
+  cursor:"pointer"
+}
+
+const submitStyle = {
+  width:"100%",
+  padding:"12px",
+  background:"green",
+  color:"white",
+  border:"none",
+  borderRadius:"5px",
+  marginTop:"10px",
+  cursor:"pointer"
+}
+   return (
+  <div style={{
+    display:"flex",
+    justifyContent:"center",
+    alignItems:"center",
+    minHeight:"100vh",
+    background:"#f4f6f9"
+  }}>
+
+    <div style={{
+      width:"400px",
+      background:"white",
+      padding:"30px",
+      borderRadius:"10px",
+      boxShadow:"0px 0px 10px rgba(0,0,0,0.2)"
+    }}>
+
+      <h2 style={{textAlign:"center",marginBottom:"20px"}}>
+        Order Placed
+      </h2>
+
+      <form onSubmit={(event)=>orderplaced(event)}>
+
+        <label>Order Id</label>
+        <input
+          type="text"
+          value={orderId}
+          onChange={(event)=>setorderId(event.target.value)}
+          style={inputStyle}
+        />
+
+        <label>User Id</label>
+        <input
+          type="text"
+          value={userId}
+          onChange={(event)=>setuserId(event.target.value)}
+          style={inputStyle}
+        />
+
+        <label>Date</label>
+        <input
+          type="text"
+          value={date}
+          onChange={(event)=>setdate(event.target.value)}
+          style={inputStyle}
+        />
+
+        <h3 style={{marginTop:"20px"}}>Items</h3>
+
+        <label>Product Id</label>
+        <input
+          type="text"
+          value={productId}
+          onChange={(event)=>setproductId(event.target.value)}
+          style={inputStyle}
+        />
+
+        <label>Name</label>
+        <input
+          type="text"
+          value={name}
+          onChange={(event)=>setname(event.target.value)}
+          style={inputStyle}
+        />
+
+        <label>Price</label>
+        <input
+          type="text"
+          value={price}
+          onChange={(event)=>setprice(event.target.value)}
+          style={inputStyle}
+        />
+
+        <label>Quantity</label>
+        <input
+          type="number"
+          value={Quantity}
+          onChange={(event)=>QuantityDecider(event.target.value)}
+          style={inputStyle}
+        />
+
+        <button
+          onClick={(event)=>CalculateTotal(event)}
+          style={btnStyle}
+        >
+          Calculate Total
+        </button>
+
+        <h2 style={{textAlign:"center"}}>Total : ₹{total}</h2>
+
+        <button style={submitStyle}>
+          Submit Order
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+)
+}
 export default OrderPlaced

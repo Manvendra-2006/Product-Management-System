@@ -310,44 +310,20 @@
   ],
   "products": [
     {
-      "productId": "103",
-      "name": "Puma Sneakers Hello",
-      "stock": 65,
-      "description": "Stylish sneakers for casual wear.",
-      "price": 3000,
-      "id": "4faf"
-    },
-    {
-      "productId": "104",
-      "name": "Reebok Shorts",
-      "price": 2200,
-      "description": "Lightweight shorts perfect for gym and running.",
-      "stock": 40,
-      "id": "7eb3"
-    },
-    {
-      "productId": "105",
-      "name": "Under Armour Jacket",
-      "price": 4000,
-      "description": "Water-resistant jacket for outdoor sports.",
-      "stock": 30,
-      "id": "7db2"
-    },
-    {
-      "productId": "106",
-      "name": "Nike Cap",
-      "price": 2100,
-      "description": "Adjustable cap with iconic Nike logo.",
-      "stock": 70,
-      "id": "607c"
-    },
-    {
-      "id": "77fb",
       "productId": "115",
       "name": "Nike Shoes",
-      "stock": "12",
+      "stock": "19",
       "description": "This is Good",
-      "price": "900"
+      "price": "900",
+      "id": "77fb"
+    },
+    {
+      "id": "0bda",
+      "productId": "113",
+      "name": "Jacky ke jute",
+      "stock": "12",
+      "description": "hello",
+      "price": "1600"
     }
   ]
 }

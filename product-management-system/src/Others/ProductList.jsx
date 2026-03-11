@@ -1,57 +1,127 @@
 import React, { useContext } from 'react'
 import { AuthContext } from '../AuthProvider/AuthProvider'
 import { Link } from 'react-router-dom'
+
 const ProductList = () => {
+
   const authData = useContext(AuthContext)
   const productData = authData.productdata
-    async function DeleteProduct(id){
-        const URL = `http://localhost:3000/products/${id}`
-        let response = await fetch(URL,{
-            method:"Delete"            
-        })
-        response = await response.json()
-        console.log(response)
-        if(response){
-            alert("Product is Deleted")
-        }
+
+  async function DeleteProduct(id){
+
+    const URL = `http://localhost:3000/products/${id}`
+
+    let response = await fetch(URL,{
+      method:"DELETE"
+    })
+
+    response = await response.json()
+
+    if(response){
+      alert("Product is Deleted")
     }
+
+  }
+
   return (
-    <div>
-      <table border="1" cellPadding="10" cellSpacing="0">
-        <thead>
+
+    <div style={{padding:"30px",fontFamily:"Arial"}}>
+
+      <h1 style={{marginBottom:"20px"}}>Product List</h1>
+
+      <table
+        style={{
+          width:"100%",
+          borderCollapse:"collapse",
+          boxShadow:"0 4px 10px rgba(0,0,0,0.1)"
+        }}
+      >
+
+        <thead style={{background:"#007bff",color:"white"}}>
+
           <tr>
-            <th>ProductId</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th>Stock</th>
-            <th>Delete</th>
-            <th>Edit</th>
+            <th style={{padding:"10px"}}>Product ID</th>
+            <th style={{padding:"10px"}}>Name</th>
+            <th style={{padding:"10px"}}>Description</th>
+            <th style={{padding:"10px"}}>Price</th>
+            <th style={{padding:"10px"}}>Stock</th>
+            <th style={{padding:"10px"}}>Delete</th>
+            <th style={{padding:"10px"}}>Edit</th>
           </tr>
+
         </thead>
 
         <tbody>
+
           {
-            productData && productData.map((item) => (
-              <tr key={item.productId}>
-                <td>{item.productId}</td>
-                <td>{item.name}</td>
-                <td>{item.description}</td>
-                <td>{item.price}</td>
-                <td>{item.stock}</td>
-                <td>
-                  <button onClick={()=>DeleteProduct(item.id)}>Delete</button>
-                </td>
-                <td>
-                  <Link to={`/AdminDashBoard/ProductList/EditProduct/${item.id}`}>Edit</Link>
-                </td>
-              </tr>
-            ))
+            productData && productData.map((item)=>{
+
+              return(
+
+                <tr
+                  key={item.productId}
+                  style={{
+                    textAlign:"center",
+                    borderBottom:"1px solid #ddd"
+                  }}
+                >
+
+                  <td style={{padding:"10px"}}>{item.productId}</td>
+                  <td style={{padding:"10px"}}>{item.name}</td>
+                  <td style={{padding:"10px"}}>{item.description}</td>
+                  <td style={{padding:"10px"}}>₹{item.price}</td>
+                  <td style={{padding:"10px"}}>{item.stock}</td>
+
+                  <td style={{padding:"10px"}}>
+
+                    <button
+                      onClick={()=>DeleteProduct(item.id)}
+                      style={{
+                        padding:"6px 12px",
+                        background:"#dc3545",
+                        color:"white",
+                        border:"none",
+                        borderRadius:"5px",
+                        cursor:"pointer"
+                      }}
+                    >
+                      Delete
+                    </button>
+
+                  </td>
+
+                  <td style={{padding:"10px"}}>
+
+                    <Link
+                      to={`/AdminDashBoard/ProductList/EditProduct/${item.id}`}
+                      style={{
+                        padding:"6px 12px",
+                        background:"#28a745",
+                        color:"white",
+                        textDecoration:"none",
+                        borderRadius:"5px"
+                      }}
+                    >
+                      Edit
+                    </Link>
+
+                  </td>
+
+                </tr>
+
+              )
+
+            })
           }
+
         </tbody>
+
       </table>
+
     </div>
+
   )
+
 }
 
 export default ProductList

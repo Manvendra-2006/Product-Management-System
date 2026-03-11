@@ -5,6 +5,7 @@ const AuthProvider = ({children}) => {
     const [orderdata,setorderdata] = useState([]);
     const [admindata,setadmindata ] = useState([])
     const [productdata,setproductdata] = useState([]);
+    const [loading,setloading] = useState(true)
     async function UserData(){
         const URL = "http://localhost:3000/users";
         let response = await fetch(URL);
@@ -30,16 +31,15 @@ const AuthProvider = ({children}) => {
         setproductdata(response)
     }
     useEffect(()=>{
-        UserData();
-        OrderData()
-        AdminData()
-        ProductData()
-    },[])
+    Promise.all([UserData(), OrderData(), AdminData(), ProductData()])
+    .finally(()=> setloading(false))  // ✅ सब complete होने के बाद false होगा
+},[])
+   
   return (
     <div>
-        <AuthContext.Provider value={{admindata,orderdata,productdata,userdata}}>
+  <AuthContext.Provider value={{admindata,orderdata,productdata,userdata,loading}}>
     {children}
-        </AuthContext.Provider>
+        </AuthContext.Provider>      
     </div>
   )
 }

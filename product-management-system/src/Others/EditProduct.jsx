@@ -29,33 +29,98 @@ const EditProduct = () => {
             navigate("/AdminDashBoard")
         }
     }
-  return (
-    <div>
-        <form action="" onSubmit={(event)=>EditProduct(event)}>
-            <label htmlFor="">ProductId</label>
-            <input type="text" placeholder='Enter ProductId' onChange={(event)=>setproductId(event.target.value)} value={productId} />
-            <br />
-            <br />
-             <label htmlFor="">Name</label>
-            <input type="text" placeholder='Enter Name' onChange={(event)=>setname(event.target.value)} value={name} />
-            <br />
-            <br />
-             <label htmlFor="">Description</label>
-            <input type="text" placeholder='Enter Description' onChange={(event)=>setdescription(event.target.value)} value={description} />
-            <br />
-            <br />
-             <label htmlFor="">Stock</label>
-            <input type="number" placeholder='Enter Stock' onChange={(event)=>setstock(event.target.value)} value={stock} />
-            <br />
-            <br />
-             <label htmlFor="">Price</label>
-            <input type="number" placeholder='Enter Price' onChange={(event)=>setprice(event.target.value)} value={price} />
-            <br />
-            <br />
-            <button type='submit'>Edit</button>
-        </form>
-    </div>
-  )
+    const containerStyle = {
+display:"flex",
+justifyContent:"center",
+alignItems:"center",
+height:"100vh",
+background:"#f4f6f9"
+}
+
+const cardStyle = {
+width:"350px",
+padding:"25px",
+background:"white",
+borderRadius:"10px",
+boxShadow:"0px 0px 10px rgba(0,0,0,0.2)"
+}
+
+const inputStyle = {
+width:"100%",
+padding:"8px",
+marginBottom:"12px",
+border:"1px solid #ccc",
+borderRadius:"5px"
+}
+
+const btnStyle = {
+width:"100%",
+padding:"10px",
+background:"#2563eb",
+color:"white",
+border:"none",
+borderRadius:"5px",
+cursor:"pointer"
+}
+ return (
+<div style={containerStyle}>
+
+<div style={cardStyle}>
+
+<h2>Edit Product</h2>
+
+<form onSubmit={(event)=>EditProduct(event)}>
+
+<label>Product Id</label>
+<input
+type="text"
+value={productId}
+onChange={(event)=>setproductId(event.target.value)}
+style={inputStyle}
+/>
+
+<label>Name</label>
+<input
+type="text"
+value={name}
+onChange={(event)=>setname(event.target.value)}
+style={inputStyle}
+/>
+
+<label>Description</label>
+<input
+type="text"
+value={description}
+onChange={(event)=>setdescription(event.target.value)}
+style={inputStyle}
+/>
+
+<label>Stock</label>
+<input
+type="number"
+value={stock}
+onChange={(event)=>setstock(event.target.value)}
+style={inputStyle}
+/>
+
+<label>Price</label>
+<input
+type="number"
+value={price}
+onChange={(event)=>setprice(event.target.value)}
+style={inputStyle}
+/>
+
+<button type="submit" style={btnStyle}>
+Update Product
+</button>
+
+</form>
+
+</div>
+
+</div>
+)
 }
 
 export default EditProduct
