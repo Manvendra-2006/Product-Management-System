@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { useNavigate, useParams } from 'react-router'
 import { AuthContext } from '../AuthProvider/AuthProvider'
+import { toast } from 'react-toastify'
 const EditProduct = () => {
     
     const {id} = useParams()
@@ -25,7 +26,7 @@ const EditProduct = () => {
         })
         response = await response.json()
         if(response){
-            alert("Product Data is Edited")
+            toast.success("Product is Edited")
             navigate("/AdminDashBoard")
         }
     }

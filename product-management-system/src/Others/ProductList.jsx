@@ -18,7 +18,7 @@ const ProductList = () => {
     response = await response.json()
 
     if(response){
-      alert("Product is Deleted")
+      toast.info("Product is Deleted")
     }
 
   }

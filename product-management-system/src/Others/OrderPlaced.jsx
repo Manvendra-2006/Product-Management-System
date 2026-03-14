@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { useParams } from 'react-router';
+import { toast } from 'react-toastify';
 const OrderPlaced = () => {    
 const today = new Date().toISOString().split("T")[0];
     const authData = useContext(AuthContext)
@@ -43,7 +44,7 @@ const today = new Date().toISOString().split("T")[0];
             })
             response = await response.json()
              if(response){
-                alert("Order is placed")
+                toast.success("Order is Placed")
             }
         }
         else{
@@ -54,12 +55,12 @@ const today = new Date().toISOString().split("T")[0];
             })
             response = await response.json()
             if(response){
-                alert("Order is placed")
+                toast.success("Order is placed")
             }
         }
         }
         else{
-            alert("User is not valid")
+            toast.error("Order is not placed")
         }
     }
     }, [submitting]) // Jab bhi dependecy ki value change hogi useEffect chlega

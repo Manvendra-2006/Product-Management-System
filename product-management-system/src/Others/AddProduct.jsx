@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { toast } from 'react-toastify'
 
 const AddProduct = () => {
      const [productId,setproductId] = useState('')
@@ -17,7 +18,7 @@ const AddProduct = () => {
         response =await  response.json()
         console.log(response)
         if(response){
-            alert("Data is added")
+            toast.success("Product is added")
         }
     }
     const containerStyle = {

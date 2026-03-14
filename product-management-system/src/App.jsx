@@ -1,5 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import UserDashBoad from './DashBoard/UserDashBoad'
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Login from './Auth/Login'
 import { AuthContext } from './AuthProvider/AuthProvider'
 //import AuthProvider, { AuthContext } from './AuthProvider/AuthProvider'
@@ -68,6 +70,7 @@ const App = () => {
         </Route>
       </Routes>
       </BrowserRouter>
+      <ToastContainer/>
     </div>
   )
 }

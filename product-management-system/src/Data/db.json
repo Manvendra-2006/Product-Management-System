@@ -298,6 +298,27 @@
           "Quantity": "1"
         }
       ]
+    },
+    {
+      "id": "f8c1",
+      "orderId": "ORD2026-03-14",
+      "userId": "99f4",
+      "date": "2026-03-14",
+      "total": 12400,
+      "items": [
+        {
+          "productId": "115",
+          "name": "NikeShoes",
+          "price": "900",
+          "Quantity": "12"
+        },
+        {
+          "productId": "113",
+          "name": "Jackykejute",
+          "price": "1600",
+          "Quantity": "1"
+        }
+      ]
     }
   ],
   "admins": [
@@ -312,7 +333,7 @@
     {
       "productId": "115",
       "name": "Nike Shoes",
-      "stock": "19",
+      "stock": 7,
       "description": "This is Good",
       "price": "900",
       "id": "77fb"
@@ -321,7 +342,7 @@
       "id": "0bda",
       "productId": "113",
       "name": "Jacky ke jute",
-      "stock": "12",
+      "stock": 11,
       "description": "hello",
       "price": "1600"
     }
