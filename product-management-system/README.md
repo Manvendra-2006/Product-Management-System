@@ -29,13 +29,17 @@ A full-featured **Product Management System** built with **React + Vite** and **
 ## ⚙️ Setup
 
 ```bash
-# 1. Install dependencies
+# 1. Clone the repository
+git clone https://github.com/your-username/product-management-system.git
+cd product-management-system
+ 
+# 2. Install dependencies
 npm install
-
-# 2. Start JSON Server (port 3000)
+ 
+# 3. Start JSON Server (port 3000)
 npx json-server --watch src/Data/db.json --port 3000
-
-# 3. Start React App
+ 
+# 4. Start React App
 npm run dev
 ```
 
