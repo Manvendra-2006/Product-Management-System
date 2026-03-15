@@ -30,7 +30,7 @@ A full-featured **Product Management System** built with **React + Vite** and **
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/your-username/product-management-system.git
+git clone https://github.com/Manvendra-2006/product-management-system.git
 cd product-management-system
  
 # 2. Install dependencies
